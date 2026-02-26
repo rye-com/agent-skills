@@ -2,55 +2,78 @@
 
 Agent skills for [Rye's Universal Checkout API](https://docs.rye.com) — turn any product URL into a completed purchase.
 
-Built on the [agentskills.io](https://agentskills.io) open standard. Works with Claude Code, Cursor, OpenClaw, and any compatible agent.
+Built on the [agentskills.io](https://agentskills.io) open standard. Works with Claude Code, Cursor, Codex, and any compatible agent.
 
-## Skills
-
-| Skill | Description |
-|-------|-------------|
-| [`rye-overview`](skills/rye-overview/SKILL.md) | Learn what Rye is, explore capabilities, and find the right path for your use case |
-| [`rye-universal-checkout`](skills/rye-universal-checkout/SKILL.md) | Integrate Rye checkout into apps or buy products programmatically via AI agents |
-
-## Install
-
-Install with [`skills`](https://www.npmjs.com/package/skills):
+## Installation
 
 ```bash
 npx skills add rye-com/agent-skills
 ```
 
-This auto-detects your agent (Claude Code, Cursor, Codex, etc.) and installs the skill to the right location.
+## Available Skills
 
-### Options
+<details>
+<summary><strong>rye-overview</strong></summary>
 
-```bash
-# Install to a specific agent
-npx skills add rye-com/agent-skills -a claude-code
+Learn what Rye is, explore capabilities, and find the right path for your use case.
 
-# Install globally (all projects)
-npx skills add rye-com/agent-skills -g
+**Use when:**
 
-# List available skills without installing
-npx skills add rye-com/agent-skills --list
+- You want to understand what Rye does and how it works
+- You're exploring whether Rye fits your use case
+- You need help choosing between integration approaches
+- You want to see what you can build (shopping assistants, dropshipping, chat commerce, etc.)
+
+</details>
+
+<details>
+<summary><strong>rye-universal-checkout</strong></summary>
+
+Integrate Rye checkout into apps or buy products programmatically via AI agents. Contains references for developer integration, agent commerce, and the full API.
+
+**Use when:**
+
+- Integrating Rye checkout into an existing codebase
+- Building an AI agent that purchases products on behalf of users
+- Looking up product data (price, availability, images) from any URL
+- Writing a script that buys a product from any merchant
+
+**References included:**
+
+- Developer Integration Workflow (analyze → plan → implement → verify)
+- Agent Commerce Workflow (lookup → buy → confirm)
+- Full API Reference (endpoints, SDKs, examples)
+
+</details>
+
+## Usage
+
+Skills are automatically available once installed. The agent will use them when relevant tasks are detected.
+
+**Examples:**
+
+```
+What is Rye? Can it work for my use case?
 ```
 
-Once installed, skills activate automatically based on your task — or invoke them manually:
-
-- `/rye-overview` — "What is Rye? What can it do for my use case?"
-- `/rye-universal-checkout` — Integrate checkout or buy a product
-
-## Structure
+```
+Integrate Rye checkout into my Next.js app
+```
 
 ```
-skills/
-├── rye-overview/
-│   └── SKILL.md                  # Capabilities explainer & use case guide
-└── rye-universal-checkout/
-    ├── SKILL.md                  # Entry point (~110 lines)
-    └── references/
-        ├── integrate.md          # Developer integration workflow
-        ├── buy.md                # Agent commerce workflow
-        └── api-reference.md      # Full API reference
+Look up this product and tell me if it's available: https://www.amazon.com/Apple-MX532LL-A-AirTag/dp/B0CWXNS552/
+```
+
+```
+Build me a Python script that buys a product from any URL
+```
+
+```
+Buy this for me: https://flybyjing.com/collections/shop/products/the-big-boi
+```
+
+```
+Help me go from Rye staging to production
 ```
 
 ## License
