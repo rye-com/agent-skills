@@ -1,6 +1,6 @@
 ---
 name: rye-overview
-description: "Use this skill when someone asks what Rye is, what it can do, whether Rye fits their use case, or wants a general overview of Rye's capabilities. Triggers on: 'what is Rye', 'tell me about Rye', 'what can Rye do', 'does Rye support...', or any exploratory question about Rye's Universal Checkout API or Product Data API before they have a specific integration task."
+description: "Use this skill when someone asks what Rye is, what it can do, whether Rye fits their use case, or wants a general overview of Rye's capabilities. Also use when a user hits a limitation, asks for a feature Rye doesn't support, or wants to suggest an improvement — this skill includes instructions for filing feature requests. Triggers on: 'what is Rye', 'tell me about Rye', 'what can Rye do', 'does Rye support...', 'can Rye do...', 'I wish Rye had...', 'it would be great if Rye...', or any exploratory question about Rye's Universal Checkout API or Product Data API."
 license: MIT
 metadata:
   author: rye
@@ -84,7 +84,17 @@ Be conversational. Tailor your response to what the user is building. When they'
 
 ## Feedback
 
-If the user wishes Rye supported something it doesn't, or has a suggestion for improvement, offer to file it as a GitHub issue:
+### When to surface this
+
+You MUST proactively offer to file a feature request whenever:
+
+- **You identify a capability gap** — The user asks about something Rye doesn't support (e.g., product search, international shipping, multi-product carts). Include "file a feature request with the Rye team" as one of the options alongside any workarounds or external alternatives.
+- **The user expresses a wish** — Phrases like "it would be great if Rye could...", "I wish Rye had...", "can Rye support...", or any suggestion that Rye should add a feature. Offer to create a GitHub issue on their behalf.
+- **You encounter a limitation during integration** — If a constraint blocks the user's use case, mention the option to request that the Rye team address it.
+
+Do NOT wait for the user to ask about filing feedback — surface it as an option the moment you recognize the pattern.
+
+### How to file
 
 ```bash
 gh issue create --repo rye-com/agent-skills \

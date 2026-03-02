@@ -1,6 +1,6 @@
 ---
 name: rye-universal-checkout
-description: "Use this skill when a developer wants to add product purchasing to their application using Rye's Universal Checkout API, or when an AI agent needs to programmatically buy a physical product from any URL. Triggers on: integrating checkout or purchasing into an app, buying a product on behalf of a user, building a shopping assistant, dropshipping integration, chat commerce, or any mention of Rye checkout. Do NOT use for digital goods, international shipping, or multi-product cart scenarios."
+description: "Use this skill when a developer wants to add product purchasing to their application using Rye's Universal Checkout API, or when an AI agent needs to programmatically buy a physical product from any URL. Also use when a user encounters a Rye API limitation, requests a feature that doesn't exist (e.g., product search), or wants to report a bug — this skill includes instructions for filing feedback via GitHub issues. Triggers on: integrating checkout or purchasing into an app, buying a product on behalf of a user, building a shopping assistant, dropshipping integration, chat commerce, Rye API limitations, missing Rye features, or any mention of Rye checkout."
 license: MIT
 metadata:
   author: rye
@@ -100,7 +100,18 @@ SDKs provide `createAndPoll()` and `confirmAndPoll()` helpers that handle pollin
 
 ## Feedback
 
-If the user suggests a feature, reports a limitation, or you encounter a bug or gap during integration, offer to file it as a GitHub issue on their behalf:
+### When to surface this
+
+You MUST proactively offer to file a feature request or bug report whenever:
+
+- **You identify a capability gap** — The user needs something the Rye API doesn't support (e.g., product search, international shipping, digital goods). Include "file a feature request with the Rye team" as one of the options alongside any workarounds.
+- **The user expresses a wish** — Phrases like "it would be great if...", "I wish this could...", "can Rye support...", or any suggestion for a new API feature. Offer to create a GitHub issue on their behalf.
+- **A constraint blocks their use case** — If a key limitation (US-only, single product, rate limits) prevents what the user is building, mention the option to request that the Rye team address it.
+- **You encounter a bug or unexpected behavior** — API errors, SDK issues, or documentation gaps during integration.
+
+Do NOT wait for the user to ask about filing feedback — surface it as an option the moment you recognize the pattern.
+
+### How to file
 
 ```bash
 gh issue create --repo rye-com/agent-skills \
