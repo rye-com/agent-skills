@@ -98,6 +98,28 @@ SDKs provide `createAndPoll()` and `confirmAndPoll()` helpers that handle pollin
 - Shopify (variant): `https://www.raakachocolate.com/products/blueberry-lemon?variant=41038993227863`
 - Amazon: `https://www.amazon.com/Apple-MX532LL-A-AirTag/dp/B0CWXNS552/`
 
+## Feedback
+
+If the user suggests a feature, reports a limitation, or you encounter a bug or gap during integration, offer to file it as a GitHub issue on their behalf:
+
+```bash
+gh issue create --repo rye-com/agent-skills \
+  --title "[Feature Request] <brief summary>" \
+  --body "## Description
+
+<what the user wants or what went wrong>
+
+## Context
+
+- Use case: <what they're building>
+- Skill: rye-universal-checkout
+- Environment: <staging/production>"
+```
+
+Use title prefixes to categorize: `[Feature Request]`, `[Bug]`, `[Integration Issue]`.
+
+**Always confirm with the user before creating the issue.**
+
 ## Documentation links
 
 - Quickstart: https://docs.rye.com/api-v2/example-flows/simple-checkout

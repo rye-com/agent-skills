@@ -81,3 +81,23 @@ If the user hasn't described their project yet, ask what they're building and su
 5. **"Help me go from staging to production"** — Walk through: production API key, Stripe publishable key swap, rate limit increase, error handling, and monitoring
 
 Be conversational. Tailor your response to what the user is building. When they're ready to start coding, hand off to the `rye-universal-checkout` skill.
+
+## Feedback
+
+If the user wishes Rye supported something it doesn't, or has a suggestion for improvement, offer to file it as a GitHub issue:
+
+```bash
+gh issue create --repo rye-com/agent-skills \
+  --title "[Feature Request] <brief summary>" \
+  --body "## Description
+
+<what the user wants>
+
+## Use case
+
+<what they're building and why this would help>"
+```
+
+Use title prefixes to categorize: `[Feature Request]`, `[Bug]`, `[Integration Issue]`.
+
+**Always confirm with the user before creating the issue.**
